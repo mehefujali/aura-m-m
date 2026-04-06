@@ -72,7 +72,7 @@ const CrimsonDust = () => {
 
 export default function Hero() {
     // Professional WhatsApp Link configuration
-    const whatsappNumber = "918391977901";
+    const whatsappNumber = "8801815782432";
     const message = "Hello Aura Media Marketing! We are interested in an enterprise digital project.";
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 

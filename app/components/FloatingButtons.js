@@ -3,13 +3,13 @@
 import React from "react";
 
 const FloatingButtons = () => {
-  const phoneNumber = "+919239536545"; // Apnar original number
+  const phoneNumber = "+8801815782432"; // Updated number from PDF
 
   // Premium professional message
   const message = "Hi Aura Media Team! I'm interested in discussing an enterprise project.";
   const encodedMessage = encodeURIComponent(message);
 
-  const whatsappLink = `https://wa.me/919239536545?text=${encodedMessage}`;
+  const whatsappLink = `https://wa.me/8801815782432?text=${encodedMessage}`;
   const callLink = `tel:${phoneNumber}`;
 
   return (

@@ -3,12 +3,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const processSteps = [
-    { num: "01", title: "Discovery & Analysis", description: "We start by deeply understanding your vision, goals, and target audience to lay a solid foundation for the architecture.", icon: "fa-search" },
-    { num: "02", title: "Strategy & Planning", description: "A comprehensive roadmap is crafted, detailing the technology stack, system architecture, and precise project milestones.", icon: "fa-layer-group" },
-    { num: "03", title: "UI/UX Design", description: "We create intuitive, hyper-modern interfaces and interactive prototypes to perfectly visualize the final digital product.", icon: "fa-pen-nib" },
-    { num: "04", title: "Engineering", description: "Our elite developers bring the design to life with clean, highly efficient, and massively scalable code.", icon: "fa-code" },
-    { num: "05", title: "Quality Assurance", description: "Rigorous automated and manual testing is conducted to ensure a bug-free, secure, and high-performance deployment.", icon: "fa-shield-halved" },
-    { num: "06", title: "Deployment", description: "We handle the seamless project launch into production and provide ongoing support for continuous scaling.", icon: "fa-rocket" }
+    { num: "01", title: "Discovery Meeting", description: "After you reach out, our founder or co-founder will have a quick meeting with you to learn all about your brand, business, and goals.", icon: "fa-handshake" },
+    { num: "02", title: "Growth Strategy", description: "We will create and share a free roadmap and strategy to help your business grow, along with clear pricing for our services.", icon: "fa-chart-line" },
+    { num: "03", title: "Onboarding", description: "When both sides are ready and agree to move forward, we send the agreement and invoice so we can officially start working together.", icon: "fa-file-signature" }
 ];
 
 const ProcessStep = ({ step, index }) => {
@@ -26,8 +23,9 @@ const ProcessStep = ({ step, index }) => {
             { threshold: 0.3, rootMargin: "0px 0px -100px 0px" }
         );
 
-        if (stepRef.current) observer.observe(stepRef.current);
-        return () => { if (stepRef.current) observer.unobserve(stepRef.current); };
+        const currentRef = stepRef.current;
+        if (currentRef) observer.observe(currentRef);
+        return () => { if (currentRef) observer.unobserve(currentRef); };
     }, []);
 
     const isEven = index % 2 === 0;
@@ -78,8 +76,9 @@ export default function Process() {
             },
             { threshold: 0.5 }
         );
-        if (headerRef.current) observer.observe(headerRef.current);
-        return () => { if (headerRef.current) observer.unobserve(headerRef.current); };
+        const currentRef = headerRef.current;
+        if (currentRef) observer.observe(currentRef);
+        return () => { if (currentRef) observer.unobserve(currentRef); };
     }, []);
 
     return (

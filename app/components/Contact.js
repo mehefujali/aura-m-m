@@ -54,86 +54,112 @@ const Contact = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="bg-[#040919] py-20 lg:py-32 px-6 overflow-hidden"
+      className="bg-[#020202] py-24 lg:py-32 px-5 sm:px-8 relative overflow-hidden font-sans border-t border-white/[0.03]"
     >
-      <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-2xl bg-slate-900/50 border border-cyan-400/20 backdrop-blur-md">
-          <div className="text-center mb-12">
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#e50914]/5 rounded-full blur-[150px] pointer-events-none"></div>
+      
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="max-w-5xl mx-auto p-10 md:p-16 rounded-[2.5rem] bg-white/[0.01] border border-white/5 backdrop-blur-2xl shadow-2xl">
+          <div className="text-center mb-16">
             <h2
-              className="text-4xl md:text-5xl font-bold text-white text-balance"
-              style={{
-                ...animateStyle(0),
-                textShadow: "0 0 10px rgba(0, 205, 243, 0.5)",
-              }}
+              className="text-5xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6"
+              style={animateStyle(0)}
             >
-             {` Let's Build Something Amazing Together`}
+             {` Initiate your `}
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-[#e50914] drop-shadow-[0_0_15px_rgba(229,9,20,0.2)]">
+                Legacy.
+             </span>
             </h2>
             <p
-              className="text-lg text-gray-300 mt-4 text-balance"
+              className="text-lg text-slate-400 font-light max-w-2xl mx-auto leading-relaxed"
               style={animateStyle(1)}
             >
-              Have a project in mind or just want to say hello? Drop us a
-              message.
+              Have an enterprise vision or an architectural challenge? Reach out to our elite team of digital strategists today.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div style={animateStyle(2)}>
-                <label
-                  htmlFor="name"
-                  className="text-sm font-semibold text-gray-400"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="mt-2 w-full p-3 rounded-lg bg-black/30 border border-white/10 focus:border-[#00cdf3] focus:ring-2 focus:ring-[#00cdf3]/50 focus:outline-none transition-all duration-300"
-                />
+            <form onSubmit={handleSubmit} className="lg:col-span-7 space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div style={animateStyle(2)}>
+                  <label htmlFor="name" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Enter your name"
+                    className="w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/10 text-white placeholder-slate-600 focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500"
+                  />
+                </div>
+                <div style={animateStyle(3)}>
+                  <label htmlFor="email" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Enter your email"
+                    className="w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/10 text-white placeholder-slate-600 focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500"
+                  />
+                </div>
               </div>
-              <div style={animateStyle(3)}>
-                <label
-                  htmlFor="email"
-                  className="text-sm font-semibold text-gray-400"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="mt-2 w-full p-3 rounded-lg bg-black/30 border border-white/10 focus:border-[#00cdf3] focus:ring-2 focus:ring-[#00cdf3]/50 focus:outline-none transition-all duration-300"
-                />
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div style={animateStyle(4)}>
+                  <label htmlFor="service" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Select Service</label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    className="w-full px-6 py-4 rounded-2xl bg-[#050505] border border-white/10 text-white focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500 appearance-none"
+                  >
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Social Media Management">Social Media Management</option>
+                    <option value="Design Studio">Design Studio</option>
+                    <option value="Combination">Combination</option>
+                  </select>
+                </div>
+                <div style={animateStyle(5)}>
+                  <label htmlFor="budget" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Project Budget</label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    required
+                    className="w-full px-6 py-4 rounded-2xl bg-[#050505] border border-white/10 text-white focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500 appearance-none"
+                  >
+                    <option value="" disabled selected>Select Budget Range</option>
+                    <option value="$0-$500">$0 - $500</option>
+                    <option value="$500-$2k">$500 - $2k</option>
+                    <option value="$2k+">$2k +</option>
+                  </select>
+                </div>
               </div>
-              <div style={animateStyle(4)}>
-                <label
-                  htmlFor="message"
-                  className="text-sm font-semibold text-gray-400"
-                >
-                  Your Message
-                </label>
+
+              <div style={animateStyle(6)}>
+                <label htmlFor="message" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Message Details</label>
                 <textarea
                   id="message"
                   name="message"
-                  rows="5"
+                  rows="4"
                   required
-                  className="mt-2 w-full p-3 rounded-lg bg-black/30 border border-white/10 resize-none focus:border-[#00cdf3] focus:ring-2 focus:ring-[#00cdf3]/50 focus:outline-none transition-all duration-300"
+                  placeholder="Tell us about your project"
+                  className="w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/10 text-white placeholder-slate-600 resize-none focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500"
                 ></textarea>
               </div>
-              <div style={animateStyle(5)}>
+
+              <div style={animateStyle(7)}>
                 <button
                   type="submit"
-                  className="w-full inline-block px-10 py-4 text-lg font-semibold text-black bg-[#00cdf3] rounded-lg transition-all duration-300 ease-in-out hover:bg-white hover:shadow-2xl hover:shadow-[#00cdf3]/50"
+                  className="w-full px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-white bg-[#e50914] rounded-2xl transition-all duration-500 hover:bg-white hover:text-black hover:shadow-[0_0_30px_rgba(229,9,20,0.5)] flex items-center justify-center gap-3"
                 >
-                  Send Message
+                  Send Inquiry <i className="fas fa-paper-plane text-xs"></i>
                 </button>
                 {formStatus && (
-                  <p className="text-center mt-4 text-[#00cdf3]">
+                  <p className="text-center mt-6 text-[#e50914] font-bold uppercase tracking-widest text-xs animate-pulse">
                     {formStatus}
                   </p>
                 )}
@@ -141,53 +167,45 @@ const Contact = () => {
             </form>
 
             {/* Direct Contact Info */}
-            <div className="space-y-8 pt-2">
-              {/* Proti-ta info item-er jonno alada animation */}
-              <div
-                className="flex items-start gap-4 group"
-                style={animateStyle(6)}
-              >
-                <i className="fas fa-envelope text-2xl text-[#00cdf3] mt-1 transition-transform duration-300 group-hover:scale-110"></i>
-                <div>
-                  <h4 className="font-bold text-white text-lg">Email Us</h4>
-                  <p className="text-gray-400">Our team is here to help.</p>
-                  <a
-                    href="mailto:info@nexorzen.com"
-                    className="text-[#00cdf3] hover:underline"
-                  >
-                    info@nexorzen.com
-                  </a>
+            <div className="lg:col-span-1 border-l border-white/5 mx-auto hidden lg:block h-full"></div>
+            
+            <div className="lg:col-span-4 space-y-12">
+              <div className="group" style={animateStyle(8)}>
+                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Direct Channel</p>
+                <div className="flex items-center gap-5">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center transition-all duration-500 group-hover:bg-[#e50914]/10 group-hover:border-[#e50914]/20 group-hover:shadow-[0_0_15px_rgba(229,9,20,0.2)]">
+                    <i className="fas fa-envelope text-lg text-slate-400 group-hover:text-[#e50914] transition-colors"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold tracking-tight">Email Correspondence</h4>
+                    <a href="mailto:saiffbhaiii@gmail.com" className="text-slate-400 hover:text-[#e50914] transition-colors text-sm font-light">saiffbhaiii@gmail.com</a>
+                  </div>
                 </div>
               </div>
-              <div
-                className="flex items-start gap-4 group"
-                style={animateStyle(7)}
-              >
-                <i className="fas fa-globe text-2xl text-[#00cdf3] mt-1 transition-transform duration-300 group-hover:scale-110"></i>
-                <div>
-                  <h4 className="font-bold text-white text-lg">Our Website</h4>
-                  <p className="text-gray-400">Explore our digital presence.</p>
-                  <a
-                    href="https://www.nexorzen.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#00cdf3] hover:underline"
-                  >
-                    www.nexorzen.com
-                  </a>
+
+              <div className="group" style={animateStyle(9)}>
+                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Operational Status</p>
+                <div className="flex items-center gap-5">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center transition-all duration-500 group-hover:bg-[#e50914]/10 group-hover:border-[#e50914]/20 group-hover:shadow-[0_0_15px_rgba(229,9,20,0.2)]">
+                    <i className="fab fa-whatsapp text-lg text-slate-400 group-hover:text-[#e50914] transition-colors"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold tracking-tight">Immediate Inquiry</h4>
+                    <a href="https://wa.me/8801815782432" className="text-slate-400 hover:text-[#e50914] transition-colors text-sm font-light">+880 181 578 2432</a>
+                  </div>
                 </div>
               </div>
-              <div
-                className="flex items-start gap-4 group"
-                style={animateStyle(8)}
-              >
-                <i className="fas fa-map-marker-alt text-2xl text-[#00cdf3] mt-1 transition-transform duration-300 group-hover:scale-110"></i>
-                <div>
-                  <h4 className="font-bold text-white text-lg">Our Location</h4>
-                  <p className="text-gray-400">Kolkata, West Bengal, India</p>
-                  <p className="text-gray-500 text-sm">
-                    (Serving Clients Worldwide)
-                  </p>
+
+              <div className="group" style={animateStyle(10)}>
+                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Headquarters</p>
+                <div className="flex items-center gap-5">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center transition-all duration-500 group-hover:bg-[#e50914]/10 group-hover:border-[#e50914]/20 group-hover:shadow-[0_0_15_px_rgba(229,9,20,0.2)]">
+                    <i className="fas fa-map-marker-alt text-lg text-slate-400 group-hover:text-[#e50914] transition-colors"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold tracking-tight">Global Operations</h4>
+                    <p className="text-slate-400 text-sm font-light">Available Worldwide</p>
+                  </div>
                 </div>
               </div>
             </div>

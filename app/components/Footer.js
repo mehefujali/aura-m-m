@@ -77,11 +77,25 @@ export default function Footer() {
             <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white border border-white/10 rounded-full bg-white/5 backdrop-blur-md transition-all duration-500 hover:bg-[#e50914] hover:border-[#e50914] hover:text-white hover:shadow-[0_0_20px_rgba(229,9,20,0.3)] mb-6 w-max">
               Contact Us
             </Link>
+            <div className="flex flex-col gap-4 mb-6">
+              <a href="mailto:saiffbhaiii@gmail.com" className="text-slate-400 hover:text-[#e50914] text-sm transition-colors flex items-center gap-2">
+                <i className="fas fa-envelope text-[#e50914]"></i> saiffbhaiii@gmail.com
+              </a>
+              <a href="https://wa.me/8801815782432" className="text-slate-400 hover:text-[#e50914] text-sm transition-colors flex items-center gap-2">
+                <i className="fab fa-whatsapp text-[#e50914]"></i> +880 1815782432
+              </a>
+            </div>
             <div className="flex space-x-3">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 transition-all duration-300 hover:bg-[#e50914] hover:border-[#e50914] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(229,9,20,0.4)]">
                 <i className="fab fa-facebook-f text-sm"></i>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 transition-all duration-300 hover:bg-[#e50914] hover:border-[#e50914] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(229,9,20,0.4)]">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 transition-all duration-300 hover:bg-[#c13584] hover:border-[#c13584] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(193,53,132,0.4)]">
+                <i className="fab fa-instagram text-sm"></i>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 transition-all duration-300 hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(255,0,0,0.4)]">
+                <i className="fab fa-youtube text-sm"></i>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 transition-all duration-300 hover:bg-[#0077b5] hover:border-[#0077b5] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,119,181,0.4)]">
                 <i className="fab fa-linkedin-in text-sm"></i>
               </a>
             </div>

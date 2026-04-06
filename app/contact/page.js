@@ -63,9 +63,9 @@ export default function ContactPage() {
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
-            { label: "General Inquiries", value: "mehefujalim@gmail.com", action: "mailto:mehefujalim@gmail.com", icon: "fa-envelope" },
-            { label: "Rapid Response", value: "+91 83919 77901", action: "https://wa.me/918391977901", icon: "fa-whatsapp" },
-            { label: "Global HQ", value: "Durgapur, India", action: "#", icon: "fa-location-dot" }
+            { label: "General Inquiries", value: "saiffbhaiii@gmail.com", action: "mailto:saiffbhaiii@gmail.com", icon: "fa-envelope" },
+            { label: "Rapid Response", value: "+880 181 578 2432", action: "https://wa.me/8801815782432", icon: "fa-whatsapp" },
+            { label: "Global HQ", value: "Available Worldwide", action: "#", icon: "fa-location-dot" }
           ].map((node, i) => (
             <AnimatedSection key={i} delay={i * 100} className="group">
               <div className="p-10 rounded-[2rem] bg-white/[0.01] border border-white/5 transition-all duration-500 hover:border-[#e50914]/30 hover:bg-white/[0.02]">
@@ -130,17 +130,34 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="relative">
-                  <select 
-                    name="budget" id="budget" value={formData.budget} onChange={handleChange}
-                    className="w-full bg-transparent border-b border-white/10 py-4 text-slate-300 focus:outline-none focus:border-[#e50914] transition-colors appearance-none font-light cursor-pointer"
-                  >
-                    <option value="" disabled className="bg-[#020202]">Scale of Investment</option>
-                    <option value="s" className="bg-[#020202]">$2k - $5k</option>
-                    <option value="m" className="bg-[#020202]">$5k - $15k</option>
-                    <option value="l" className="bg-[#020202]">$15k+ (Enterprise)</option>
-                  </select>
-                  <i className="fas fa-chevron-down absolute right-0 top-6 text-slate-600 text-[10px] pointer-events-none"></i>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div className="relative">
+                    <select 
+                      name="service" id="service" required
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-slate-300 focus:outline-none focus:border-[#e50914] transition-colors appearance-none font-light cursor-pointer"
+                    >
+                      <option value="" disabled selected className="bg-[#020202]">Select Service</option>
+                      <option value="Website Development" className="bg-[#020202]">Website Development</option>
+                      <option value="Digital Marketing" className="bg-[#020202]">Digital Marketing</option>
+                      <option value="Social Media Management" className="bg-[#020202]">Social Media Management</option>
+                      <option value="Design Studio" className="bg-[#020202]">Design Studio</option>
+                      <option value="Combination" className="bg-[#020202]">Combination</option>
+                    </select>
+                    <i className="fas fa-chevron-down absolute right-0 top-6 text-slate-600 text-[10px] pointer-events-none"></i>
+                  </div>
+
+                  <div className="relative">
+                    <select 
+                      name="budget" id="budget" value={formData.budget} onChange={handleChange}
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-slate-300 focus:outline-none focus:border-[#e50914] transition-colors appearance-none font-light cursor-pointer"
+                    >
+                      <option value="" disabled className="bg-[#020202]">Scale of Investment</option>
+                      <option value="s" className="bg-[#020202]">$0 - $500</option>
+                      <option value="m" className="bg-[#020202]">$500 - $2k</option>
+                      <option value="l" className="bg-[#020202]">$2k+ (Enterprise)</option>
+                    </select>
+                    <i className="fas fa-chevron-down absolute right-0 top-6 text-slate-600 text-[10px] pointer-events-none"></i>
+                  </div>
                 </div>
 
                 <div className="relative">

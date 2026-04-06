@@ -63,7 +63,7 @@ const AboutEngine = () => {
 
                         <AnimatedSection delay={300}>
                             <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed text-balance max-w-2xl">
-                                Not just another agency. We are an elite team of digital architects and marketing strategists. With a focus on <strong className="font-semibold text-white">brutal execution</strong> and data-driven scaling, we become a true extension of your enterprise.
+                                Aura Media Marketing was founded by two friends, <strong className="font-semibold text-white">Mahdi Khan</strong> and <strong className="font-semibold text-white">Saif</strong>. It began with a simple frustration: finding the right partners for growth felt impossible. We needed a cohesive team for web, design, and video, but encountered only disconnected, generic solutions. We set out to build what we couldn't find—a genuine home for top-tier creatives where brands get reliable, expert-driven results with clarity and purpose.
                             </p>
                         </AnimatedSection>
                     </div>
