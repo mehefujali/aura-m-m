@@ -115,8 +115,8 @@ export default function ContactPage() {
                       type="text" name="name" id="name" required value={formData.name} onChange={handleChange}
                       className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-[#e50914] peer transition-colors font-light" placeholder=" "
                     />
-                    <label htmlFor="name" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-valid:-top-6 peer-valid:text-[10px]">
-                      Your Designation
+                    <label htmlFor="name" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px]">
+                      Full Name / Identity
                     </label>
                   </div>
                   <div className="relative">
@@ -124,39 +124,40 @@ export default function ContactPage() {
                       type="email" name="email" id="email" required value={formData.email} onChange={handleChange}
                       className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-[#e50914] peer transition-colors font-light" placeholder=" "
                     />
-                    <label htmlFor="email" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-valid:-top-6 peer-valid:text-[10px]">
-                      Secure Email Address
+                    <label htmlFor="email" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px]">
+                      Professional Email
                     </label>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                  <div className="relative">
+                  <div className="relative border-b border-white/10 pb-2">
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Strategic Domain</p>
                     <select 
                       name="service" id="service" required
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-slate-300 focus:outline-none focus:border-[#e50914] transition-colors appearance-none font-light cursor-pointer"
+                      className="w-full bg-transparent py-2 text-slate-300 focus:outline-none transition-colors appearance-none font-light cursor-pointer"
                     >
-                      <option value="" disabled selected className="bg-[#020202]">Select Service</option>
-                      <option value="Website Development" className="bg-[#020202]">Website Development</option>
-                      <option value="Digital Marketing" className="bg-[#020202]">Digital Marketing</option>
-                      <option value="Social Media Management" className="bg-[#020202]">Social Media Management</option>
-                      <option value="Design Studio" className="bg-[#020202]">Design Studio</option>
-                      <option value="Combination" className="bg-[#020202]">Combination</option>
+                      <option value="" disabled selected className="bg-[#020202]">Select Category</option>
+                      <option value="Website Development" className="bg-[#020202]">Digital Architecture</option>
+                      <option value="Digital Marketing" className="bg-[#020202]">Performance Marketing</option>
+                      <option value="Social Media Management" className="bg-[#020202]">Social Management</option>
+                      <option value="Design Studio" className="bg-[#020202]">Visual Studio</option>
                     </select>
-                    <i className="fas fa-chevron-down absolute right-0 top-6 text-slate-600 text-[10px] pointer-events-none"></i>
+                    <i className="fas fa-chevron-down absolute right-0 bottom-4 text-slate-600 text-[10px] pointer-events-none"></i>
                   </div>
 
-                  <div className="relative">
+                  <div className="relative border-b border-white/10 pb-2">
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Resource Allocation</p>
                     <select 
                       name="budget" id="budget" value={formData.budget} onChange={handleChange}
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-slate-300 focus:outline-none focus:border-[#e50914] transition-colors appearance-none font-light cursor-pointer"
+                      className="w-full bg-transparent py-2 text-slate-300 focus:outline-none transition-colors appearance-none font-light cursor-pointer"
                     >
-                      <option value="" disabled className="bg-[#020202]">Scale of Investment</option>
+                      <option value="" disabled className="bg-[#020202]">Investment Scale</option>
                       <option value="s" className="bg-[#020202]">$0 - $500</option>
                       <option value="m" className="bg-[#020202]">$500 - $2k</option>
                       <option value="l" className="bg-[#020202]">$2k+ (Enterprise)</option>
                     </select>
-                    <i className="fas fa-chevron-down absolute right-0 top-6 text-slate-600 text-[10px] pointer-events-none"></i>
+                    <i className="fas fa-chevron-down absolute right-0 bottom-4 text-slate-600 text-[10px] pointer-events-none"></i>
                   </div>
                 </div>
 
@@ -165,8 +166,8 @@ export default function ContactPage() {
                     name="message" id="message" required rows="4" value={formData.message} onChange={handleChange}
                     className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-[#e50914] peer transition-colors resize-none font-light" placeholder=" "
                   ></textarea>
-                  <label htmlFor="message" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-valid:-top-6 peer-valid:text-[10px]">
-                    Mission Parameters
+                  <label htmlFor="message" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px]">
+                    Mission Intelligence
                   </label>
                 </div>
 

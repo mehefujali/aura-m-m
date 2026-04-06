@@ -133,7 +133,7 @@ export default function Hero() {
                 </AnimatedSection>
 
                 {/* Action Buttons */}
-                <AnimatedSection delay={400} className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full max-w-md sm:max-w-none mx-auto">
+                <AnimatedSection delay={400} className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full max-w-md sm:max-w-none mx-auto mb-20">
                     <a
                         href={whatsappLink}
                         target="_blank"
@@ -150,6 +150,25 @@ export default function Hero() {
                         Explore Architecture
                     </Link>
                 </AnimatedSection>
+
+                {/* Featured Service Cards (Matching Storyboard Page 1) */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
+                    {[
+                        { title: "Digital Marketing", icon: "fa-bullhorn", desc: "Data-driven growth strategies." },
+                        { title: "Design Studio", icon: "fa-palette", desc: "Cinematic visual storytelling." },
+                        { title: "Web Engineering", icon: "fa-laptop-code", desc: "Robust digital architectures." }
+                    ].map((card, idx) => (
+                        <AnimatedSection key={idx} delay={500 + (idx * 100)} className="group">
+                            <div className="p-8 rounded-[2rem] border border-white/5 bg-white/[0.01] backdrop-blur-2xl transition-all duration-500 hover:border-[#e50914]/20 hover:bg-white/[0.02] text-left">
+                                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-[#e50914]/10 group-hover:border-[#e50914]/30">
+                                    <i className={`fas ${card.icon} text-lg text-slate-400 group-hover:text-[#e50914] transition-colors`}></i>
+                                </div>
+                                <h3 className="text-lg font-bold text-white uppercase tracking-tight mb-2">{card.title}</h3>
+                                <p className="text-xs text-slate-500 font-light leading-relaxed">{card.desc}</p>
+                            </div>
+                        </AnimatedSection>
+                    ))}
+                </div>
 
             </div>
 

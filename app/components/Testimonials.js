@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 // Testimonials-er data
 const testimonialsData = [
@@ -74,70 +75,84 @@ const Testimonials = () => {
     <section
       ref={sectionRef}
       id="testimonials"
-      className="bg-[#040919] py-20 lg:py-32 px-6 overflow-hidden"
+      className="bg-[#020202] py-24 lg:py-32 px-5 sm:px-8 relative overflow-hidden font-sans border-t border-white/[0.03]"
     >
-      <div className="container mx-auto">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#e50914]/5 rounded-full blur-[150px] pointer-events-none"></div>
+      
+      <div className="container mx-auto max-w-7xl relative z-10 text-center">
         <div
-          className="text-center max-w-3xl mx-auto mb-16 transition-all duration-1000 ease-out"
+          className="max-w-3xl mx-auto mb-16 md:mb-24 transition-all duration-1000 ease-out"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(40px)",
           }}
         >
-          <h2
-            className="text-4xl md:text-5xl font-bold text-white text-balance"
-            style={{ textShadow: "0 0 10px rgba(0, 205, 243, 0.5)" }}
-          >
-            Trusted by Innovators
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-xl mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#e50914]"></span>
+            <span className="text-[10px] font-bold text-slate-400 tracking-[0.3em] uppercase">Testimonials</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 leading-[0.95]">
+            Trusted by <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-[#e50914] drop-shadow-[0_0_15px_rgba(229,9,20,0.2)]">
+                Global Leaders.
+            </span>
           </h2>
-          <p className="text-lg text-gray-400 mt-6 text-balance">
-            See what our clients have to say about our commitment to excellence
-            and innovation.
+          <p className="text-lg text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+            Explore the results of our strategic digital engineering through the lens of those who lead the markets.
           </p>
         </div>
 
-        <div className="relative max-w-3xl mx-auto min-h-[450px]">
+        <div className="relative max-w-4xl mx-auto min-h-[500px]">
           {/* Testimonial Cards */}
           {testimonialsData.map((testimonial, index) => (
             <div
               key={index}
-              className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+              className="absolute inset-0 transition-all duration-[1.2s] ease-[0.16,1,0.3,1]"
               style={{
                 opacity: activeIndex === index ? 1 : 0,
                 zIndex: activeIndex === index ? 10 : 1,
+                transform: activeIndex === index ? "scale(1) rotate(0deg)" : "scale(0.95) rotate(-1deg)",
+                filter: activeIndex === index ? "blur(0)" : "blur(10px)"
               }}
             >
-              <div className="p-10 md:p-12 flex items-center justify-center h-full bg-slate-900/50 border border-cyan-400/20 rounded-2xl backdrop-blur-md">
-                <div className="text-center">
-                  {/* Standard img tag byabohar kora hoyeche */}
-                  <img
-                    src={testimonial.clientImage}
-                    alt={testimonial.name}
-                    style={{ width: "80px", height: "80px" }}
-                    className="rounded-full mx-auto mb-4 border-4 border-cyan-400/30"
-                  />
-                  <h3 className="text-xl font-bold text-white">
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-sm text-gray-400 mb-6">
-                    {testimonial.title} @ {testimonial.company}
-                  </p>
-                  <blockquote className="text-lg md:text-xl text-gray-200 italic leading-relaxed max-w-2xl mx-auto text-balance">
+              <div className="p-10 md:p-16 flex items-center justify-center h-full bg-white/[0.01] border border-white/5 rounded-[2.5rem] backdrop-blur-3xl shadow-2xl group">
+                <div className="max-w-3xl text-center">
+                  <div className="relative inline-block mb-10">
+                    <div className="absolute inset-0 bg-[#e50914]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <Image
+                      src={testimonial.clientImage}
+                      alt={testimonial.name}
+                      width={96}
+                      height={96}
+                      className="rounded-full mx-auto relative z-10 grayscale group-hover:grayscale-0 transition-all duration-700 border-2 border-white/10 p-1"
+                    />
+                  </div>
+                  
+                  <i className="fas fa-quote-left text-4xl text-[#e50914]/20 mb-8 block"></i>
+                  
+                  <blockquote className="text-xl md:text-3xl text-white font-light italic leading-snug tracking-tight mb-10 text-balance">
                     {`"${testimonial.quote}"`}
                   </blockquote>
+
+                  <h3 className="text-xl font-bold text-white tracking-widest uppercase mb-1">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-xs text-[#e50914] font-bold tracking-[0.2em] uppercase">
+                    {testimonial.title} @ {testimonial.company}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
 
-          {/* Navigation Dots */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3">
+          {/* Navigation Controls */}
+          <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4">
             {testimonialsData.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                  activeIndex === index ? "bg-[#00cdf3]" : "bg-slate-700"
+                className={`transition-all duration-500 rounded-full ${
+                  activeIndex === index ? "w-10 h-1.5 bg-[#e50914]" : "w-1.5 h-1.5 bg-slate-700 hover:bg-slate-500"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

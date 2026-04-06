@@ -7,39 +7,27 @@ import Link from "next/link";
 const servicesList = [
   { 
     id: "01", 
-    title: "Web Engineering", 
-    desc: "We build high-performance, accessible, and massively scalable web architectures using modern frameworks like Next.js and React.", 
-    icon: "fa-code" 
+    title: "Digital Marketing", 
+    desc: "We help you grow faster with smart and data-driven digital marketing using strategies like ads, SEO, and conversion optimization to bring in more traffic and real results.", 
+    icon: "fa-bullhorn" 
   },
   { 
     id: "02", 
-    title: "UI/UX Strategy", 
-    desc: "Our design philosophy focuses on minimalist aesthetics and intuitive user journeys that elevate brand perception and engagement.", 
-    icon: "fa-bezier-curve" 
+    title: "Design Studio", 
+    desc: "Elevating your brand with high-quality graphic design, brand identity, social media posts, thumbnails, and cinematic video editing that captures attention.", 
+    icon: "fa-palette" 
   },
   { 
     id: "03", 
-    title: "SaaS Development", 
-    desc: "End-to-end engineering of cloud-native Software-as-a-Service platforms, including multi-tenancy, billing, and security.", 
-    icon: "fa-server" 
+    title: "Website Development", 
+    desc: "We build powerful and scalable websites including e-commerce stores, blog platforms, and fully responsive designs that perform seamlessly across all devices.", 
+    icon: "fa-laptop-code" 
   },
   { 
     id: "04", 
-    title: "Mobile Solutions", 
-    desc: "Creating seamless cross-platform mobile experiences that deliver native-level performance on both iOS and Android.", 
-    icon: "fa-mobile-screen" 
-  },
-  { 
-    id: "05", 
-    title: "Cloud Infrastructure", 
-    desc: "Architecting robust, automated CI/CD pipelines and cloud deployments using AWS, Docker, and Kubernetes for global scale.", 
-    icon: "fa-cloud" 
-  },
-  { 
-    id: "06", 
-    title: "Digital Growth", 
-    desc: "Data-driven strategies including SEO, performance marketing, and analytics to scale your digital presence globally.", 
-    icon: "fa-magnifying-glass-chart" 
+    title: "Social Media Management", 
+    desc: "Complete brand management, UGC creation, community management, and content strategy to build a strong and engaging online presence.", 
+    icon: "fa-share-nodes" 
   },
 ];
 

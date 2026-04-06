@@ -2,6 +2,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+import Image from "next/image";
+
 const AnimatedSection = ({ children, className = "", delay = 0 }) => {
     const ref = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -17,8 +19,9 @@ const AnimatedSection = ({ children, className = "", delay = 0 }) => {
             { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
         );
 
-        if (ref.current) observer.observe(ref.current);
-        return () => { if (ref.current) observer.unobserve(ref.current); };
+        const currentRef = ref.current;
+        if (currentRef) observer.observe(currentRef);
+        return () => { if (currentRef) observer.unobserve(currentRef); };
     }, []);
 
     return (
@@ -47,52 +50,63 @@ const AboutEngine = () => {
                             <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-xl mb-8 shadow-[0_0_15px_rgba(229,9,20,0.05)]">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#e50914] shadow-[0_0_10px_#e50914]"></span>
                                 <span className="text-[10px] sm:text-xs font-semibold text-slate-400 tracking-[0.25em] uppercase">
-                                    Corporate Identity
+                                    Brand Heritage
                                 </span>
                             </div>
                         </AnimatedSection>
 
                         <AnimatedSection delay={200}>
-                            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[0.95] mb-8 text-balance">
-                                WE ARE YOUR <br />
+                            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase mb-10 leading-[0.95]">
+                                Origin & <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-[#e50914] drop-shadow-[0_0_15px_rgba(229,9,20,0.2)]">
-                                    GROWTH ENGINE.
+                                    Evolution.
                                 </span>
                             </h2>
                         </AnimatedSection>
 
-                        <AnimatedSection delay={300}>
-                            <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed text-balance max-w-2xl">
-                                Aura Media Marketing was founded by two friends, <strong className="font-semibold text-white">Mahdi Khan</strong> and <strong className="font-semibold text-white">Saif</strong>. It began with a simple frustration: finding the right partners for growth felt impossible. We needed a cohesive team for web, design, and video, but encountered only disconnected, generic solutions. We set out to build what we couldn't find—a genuine home for top-tier creatives where brands get reliable, expert-driven results with clarity and purpose.
+                        <AnimatedSection delay={300} className="space-y-6">
+                            <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed text-balance">
+                                Aura Media Marketing was founded by two friends, <strong className="font-semibold text-white">Mahdi Khan</strong> and <strong className="font-semibold text-white">Saif</strong>. It began with a simple frustration: finding the right partners for growth felt impossible. We needed a cohesive team for web, design, and video, but encountered only disconnected, generic solutions. We set out to build what we couldn&apos;t find—a genuine home for top-tier creatives where brands get reliable, expert-driven results with clarity and purpose.
+                            </p>
+                            <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed text-balance">
+                                Along the way, we realized this wasn&apos;t just our struggle; many brands were facing the same confusion and wasting time trying to figure it all out alone. That&apos;s what led to Aura Media Marketing—built to bring the right creatives into one place so you don&apos;t have to search, guess, or settle. Just reliable solutions that actually work and help you move forward with clarity.
                             </p>
                         </AnimatedSection>
                     </div>
 
-                    {/* --- Landscape Video Card --- */}
-                    <div className="lg:col-span-6 relative">
-                        <AnimatedSection delay={400} className="relative w-full aspect-video rounded-[2rem] overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-2xl group shadow-2xl">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-[#e50914]/30 to-transparent opacity-60 z-10 pointer-events-none transition-opacity duration-700 group-hover:opacity-30"></div>
-                            
-                            {/* proper video tag that plays inline and prevents downloading */}
-                            <video 
-                                autoPlay 
-                                loop 
-                                muted 
-                                playsInline 
-                                className="w-full h-full object-cover grayscale contrast-125 brightness-75 transition-all duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-105 group-hover:grayscale-0"
-                            >
-                                {/* Replace with your actual video URL */}
-                                <source src="https://cdn.pixabay.com/video/2020/05/25/40131-424911048_large.mp4" type="video/mp4" />
-                            </video>
-
-                            <div className="absolute bottom-6 left-6 right-6 z-20 flex justify-between items-end pointer-events-none">
-                                <div className="px-5 py-3 bg-[#020202]/80 backdrop-blur-md border border-white/10 rounded-xl">
-                                    <p className="text-[9px] text-slate-500 uppercase tracking-[0.2em] font-semibold mb-1">System Status</p>
-                                    <div className="flex items-center gap-2.5">
-                                        <span className="w-2 h-2 rounded-full bg-[#e50914] shadow-[0_0_10px_#e50914] animate-pulse"></span>
-                                        <p className="text-xs text-white font-medium tracking-wide">Fully Operational</p>
-                                    </div>
+                    {/* --- Founder Profiles (Stroke Style) --- */}
+                    <div className="lg:col-span-6">
+                        <AnimatedSection delay={400} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            {/* Mahdi Khan */}
+                            <div className="group relative p-8 rounded-[2rem] border border-white/5 bg-transparent backdrop-blur-sm transition-all duration-700 hover:border-[#e50914]/30 hover:shadow-[0_0_40px_rgba(229,9,20,0.05)]">
+                                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-white/5">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#020202] to-transparent z-10 opacity-60"></div>
+                                    <Image 
+                                        src="https://framerusercontent.com/images/99S6F5D0V6R0.png" 
+                                        alt="Mahdi Khan"
+                                        width={400}
+                                        height={500}
+                                        className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                                    />
                                 </div>
+                                <h3 className="text-2xl font-bold text-white mb-1 uppercase tracking-tight">Mahdi Khan</h3>
+                                <p className="text-[10px] font-bold text-[#e50914] uppercase tracking-[0.2em]">Founder</p>
+                            </div>
+
+                            {/* Saif */}
+                            <div className="group relative p-8 rounded-[2rem] border border-white/5 bg-transparent backdrop-blur-sm transition-all duration-700 hover:border-[#e50914]/30 hover:shadow-[0_0_40px_rgba(229,9,20,0.05)]">
+                                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-white/5">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#020202] to-transparent z-10 opacity-60"></div>
+                                    <Image 
+                                        src="https://framerusercontent.com/images/99S6F5D0V6R0.png" 
+                                        alt="Saif"
+                                        width={400}
+                                        height={500}
+                                        className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                                    />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-1 uppercase tracking-tight">Saif</h3>
+                                <p className="text-[10px] font-bold text-[#e50914] uppercase tracking-[0.2em]">Co-Founder</p>
                             </div>
                         </AnimatedSection>
                     </div>

@@ -3,9 +3,41 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const processSteps = [
-    { num: "01", title: "Discovery Meeting", description: "After you reach out, our founder or co-founder will have a quick meeting with you to learn all about your brand, business, and goals.", icon: "fa-handshake" },
-    { num: "02", title: "Growth Strategy", description: "We will create and share a free roadmap and strategy to help your business grow, along with clear pricing for our services.", icon: "fa-chart-line" },
-    { num: "03", title: "Onboarding", description: "When both sides are ready and agree to move forward, we send the agreement and invoice so we can officially start working together.", icon: "fa-file-signature" }
+    {
+        title: "Startup Discovery",
+        subtitle: "The Foundation",
+        description: "A deep diagnostic into your brand's potential, audience behavior, and competitive landscape to define core objectives.",
+        icon: "fa-rocket",
+    },
+    {
+        title: "SEO Strategy",
+        subtitle: "Visibility Architecture",
+        description: "Mapping out the digital search ecosystem including keyword roadmaps and growth-oriented content structure.",
+        icon: "fa-search",
+    },
+    {
+        title: "Social Media",
+        subtitle: "Community Protocol",
+        description: "Initializing social platforms with consistent branding and strategic engagement frameworks for maximum reach.",
+        icon: "fa-hashtag",
+    },
+    {
+        title: "Media Solutions",
+        subtitle: "Visual Impact",
+        description: "Executing high-performance design and video production with a focus on speed, scalability, and pixel-perfect precision.",
+        icon: "fa-video",
+    },
+    {
+        title: "Cool Content",
+        subtitle: "Creative Execution",
+        description: "Deploying targeted creative campaigns and performance marketing strategies to dominate your industry's digital space.",
+    },
+    {
+        title: "Digital Growth",
+        subtitle: "Continuous Evolution",
+        description: "Real-time auditing and data-driven optimizations to ensure your brand remains ahead of global digital trends.",
+        icon: "fa-chart-line",
+    }
 ];
 
 const ProcessStep = ({ step, index }) => {
@@ -31,46 +63,44 @@ const ProcessStep = ({ step, index }) => {
     const isEven = index % 2 === 0;
 
     return (
-        <div ref={stepRef} className={`relative flex flex-col md:flex-row items-start md:items-center ${isEven ? '' : 'md:flex-row-reverse'} mb-16 md:mb-24 last:mb-0`}>
-            
-            {/* Timeline Center Node */}
-            <div className="absolute left-6 md:left-1/2 top-10 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 flex items-center justify-center z-20">
-                <div className="w-12 h-12 rounded-full bg-[#020202] flex items-center justify-center">
-                    <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-1000 ease-out ${isVisible ? 'bg-[#e50914] shadow-[0_0_20px_rgba(229,9,20,0.8)] scale-100' : 'bg-slate-800 scale-50'}`}></div>
+        <div 
+            ref={stepRef}
+            className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mb-32 transition-all duration-1000 ease-[0.16,1,0.3,1] ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-20 blur-[2px]'} ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+        >
+            {/* Index Display */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                <div className={`text-[8rem] md:text-[12rem] font-black leading-none tracking-tighter transition-all duration-700 ${isVisible ? 'text-white/10' : 'text-white/0'} select-none pointer-events-none`}>
+                    0{index + 1}
                 </div>
             </div>
 
             {/* Content Card */}
-            <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${isEven ? 'md:pr-20' : 'md:pl-20'} transition-all duration-1000 ease-[0.16,1,0.3,1] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
-                <div className="group p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-xl hover:bg-white/[0.04] hover:border-[#e50914]/30 transition-all duration-500 hover:shadow-[0_10px_40px_rgba(229,9,20,0.1)]">
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-5 mb-6">
-                        <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-[#e50914]/10 group-hover:border-[#e50914]/20 transition-all duration-500">
-                            <i className={`fas ${step.icon} text-xl text-slate-400 group-hover:text-[#e50914] transition-colors duration-500`}></i>
-                        </div>
-                        <div className="inline-flex items-center px-3 py-1 rounded-full border border-slate-800 bg-slate-900/50">
-                            <span className="text-xs font-mono font-semibold text-[#e50914] tracking-widest uppercase">Step {step.num}</span>
-                        </div>
+            <div className="w-full lg:w-1/2">
+                <div className="p-8 md:p-12 rounded-[2.5rem] border border-white/5 bg-white/[0.01] backdrop-blur-2xl transition-all duration-500 hover:border-[#e50914]/20 hover:bg-white/[0.02] group">
+                    <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 group-hover:border-[#e50914]/40 group-hover:shadow-[0_0_20px_rgba(229,9,20,0.1)] transition-all duration-500">
+                        <i className={`fas ${step.icon || 'fa-bolt'} text-2xl ${index % 2 === 0 ? 'text-[#e50914]' : 'text-white'} group-hover:scale-110 transition-transform`}></i>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#e50914] transition-all duration-300">
-                        {step.title}
-                    </h3>
-                    <p className="text-slate-400 leading-relaxed font-light text-balance">{step.description}</p>
+                    
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.25em] mb-4">{step.subtitle}</p>
+                    <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-6 group-hover:text-[#e50914] transition-colors">{step.title}</h3>
+                    <p className="text-lg text-slate-400 font-light leading-relaxed max-w-lg">
+                        {step.description}
+                    </p>
                 </div>
             </div>
-            <div className="hidden md:block w-1/2"></div>
         </div>
     );
 };
 
 export default function Process() {
     const headerRef = useRef(null);
-    const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+    const [headerVisible, setHeaderVisible] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    setIsHeaderVisible(true);
+                    setHeaderVisible(true);
                     observer.unobserve(entry.target);
                 }
             },
@@ -82,31 +112,33 @@ export default function Process() {
     }, []);
 
     return (
-        <section className="bg-[#020202] py-24 lg:py-32 px-5 sm:px-8 relative overflow-hidden font-sans border-b border-white/[0.03]">
-            <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-[#e50914]/10 rounded-full blur-[150px] pointer-events-none"></div>
+        <section id="process" className="bg-[#020202] py-24 lg:py-40 px-5 sm:px-8 relative overflow-hidden font-sans border-t border-white/[0.03]">
+            <div className="absolute top-1/4 translate-x-[-50%] left-0 w-[800px] h-[800px] bg-[#e50914]/5 rounded-full blur-[200px] pointer-events-none"></div>
             
-            <div className="container mx-auto max-w-6xl relative z-10">
-                <div ref={headerRef} className={`text-center max-w-3xl mx-auto mb-20 md:mb-32 transition-all duration-1000 ease-[0.16,1,0.3,1] ${isHeaderVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-                    <div className="mb-6 flex justify-center">
-                        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-sm">
-                            <span className="text-[11px] sm:text-[12px] font-medium text-slate-300 tracking-[0.1em] uppercase">Our Methodology</span>
-                        </div>
+            <div className="container mx-auto max-w-7xl relative z-10">
+                <div 
+                    ref={headerRef}
+                    className={`text-center mb-32 transition-all duration-1000 ease-[0.16,1,0.3,1] ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                >
+                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-xl mb-8">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#e50914] shadow-[0_0_10px_#e50914]"></span>
+                        <span className="text-[10px] font-bold text-slate-400 tracking-[0.3em] uppercase">Phase Matrix</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter text-balance uppercase">
-                        How We Engineer <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e50914] to-[#8B0000]">Your Vision</span>
+                    <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase mb-6 leading-none">
+                        Growth <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-[#e50914] drop-shadow-[0_0_15px_rgba(229,9,20,0.2)]">
+                            Protocols.
+                        </span>
                     </h2>
-                    <p className="text-lg text-slate-400 font-light leading-relaxed text-balance">
-                        A meticulously crafted, data-driven workflow designed to transform complex challenges into elegant, scalable digital architectures.
-                    </p>
                 </div>
 
-                <div className="relative w-full">
-                    <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#e50914]/30 to-transparent -translate-x-1/2"></div>
-                    <div className="relative z-10">
-                        {processSteps.map((step, index) => (
-                            <ProcessStep key={index} step={step} index={index} />
-                        ))}
-                    </div>
+                <div className="relative">
+                    {/* Vertical Connecting Line */}
+                    <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-white/10 via-[#e50914]/20 to-white/10 hidden lg:block"></div>
+                    
+                    {processSteps.map((step, index) => (
+                        <ProcessStep key={index} step={step} index={index} />
+                    ))}
                 </div>
             </div>
         </section>

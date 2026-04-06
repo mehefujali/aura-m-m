@@ -32,18 +32,29 @@ export default function BlogsPage() {
     const fetchBlogs = async () => {
       try {
         const res = await fetch(`${apiUrl}/blogs`);
-        if (res.ok) {
-          const data = await res.json();
-          setBlogs(data.data || []);
-        }
-      } catch (err) { console.error(err); } finally { setLoading(false); }
+        if (!res.ok) throw new Error("API Offline");
+        const data = await res.json();
+        setBlogs(data.data || []);
+      } catch (err) { 
+        console.warn("Blogs API unavailable. Deploying localized intelligence briefing.");
+      } finally { setLoading(false); }
     };
     if (apiUrl) fetchBlogs(); else setLoading(false);
   }, [apiUrl]);
 
+  const mockBlogs = [
+    { _id: "1", slug: "digital-vanguard", title: "The Digital Vanguard: Engineering Industry Dominance", excerpt: "Exploring the architectural paradigms that allow modern enterprises to scale at lightspeed with zero friction.", coverImage: "photo-1550751827-4bd374c3f58b", createdAt: new Date().toISOString(), readTime: "8 Min Read" },
+    { _id: "2", slug: "aesthetic-logic", title: "Aesthetic Logic: The Intersection of UI and Neurobiology", excerpt: "How cinematic interface design directly impacts user trust and long-term retention in high-stakes environments.", coverImage: "photo-1451187580459-43490279c0fa", createdAt: new Date().toISOString(), readTime: "6 Min Read" },
+    { _id: "3", slug: "quantum-stack", title: "Beyond React: The Quantum Stack of 2026", excerpt: "A deep dive into reactive hardware-accelerated rendering and the death of the traditional DOM as we know it.", coverImage: "photo-1518770660439-4636190af475", createdAt: new Date().toISOString(), readTime: "12 Min Read" },
+    { _id: "4", slug: "silent-performance", title: "The Art of Silent Performance: Zero-Latency Architectures", excerpt: "Engineering backend systems that respond before the request is even fully transmitted via predictive modeling.", coverImage: "photo-1460925895917-afdab827c52f", createdAt: new Date().toISOString(), readTime: "10 Min Read" },
+    { _id: "5", slug: "cybernetic-branding", title: "Cybernetic Branding: Identity in the Age of Synthesis", excerpt: "Merging human creative intuition with algorithmic precision to create brands that feel alive and responsive.", coverImage: "photo-1550745165-9bc0b252726f", createdAt: new Date().toISOString(), readTime: "7 Min Read" },
+    { _id: "6", slug: "global-node", title: "The Global Node: Decentralized Content Delivery", excerpt: "Why the future of the web depends on edge computing and the complete erasure of centralized regional data centers.", coverImage: "photo-1454165833222-387339978b8a", createdAt: new Date().toISOString(), readTime: "9 Min Read" }
+  ];
+
   // Featured blog is the first one
-  const featuredBlog = blogs.length > 0 ? blogs[0] : null;
-  const standardBlogs = blogs.length > 1 ? blogs.slice(1) : [];
+  const activeBlogs = blogs.length > 0 ? blogs : mockBlogs;
+  const featuredBlog = activeBlogs[0];
+  const standardBlogs = activeBlogs.slice(1);
 
   return (
     <main className="bg-[#020202] text-white min-h-screen font-sans selection:bg-[#e50914]/30">
@@ -76,7 +87,7 @@ export default function BlogsPage() {
               <div className="relative w-full aspect-video md:aspect-[21/9] overflow-hidden">
                 <Image 
                   width={1600} height={900} 
-                  src={`${imageBaseUrl}${featuredBlog.coverImage}`} 
+                  src={featuredBlog.coverImage?.startsWith('http') ? featuredBlog.coverImage : (featuredBlog.coverImage?.includes('photo-') ? `https://images.unsplash.com/${featuredBlog.coverImage}?q=80&w=2000&auto=format&fit=crop` : `${imageBaseUrl}${featuredBlog.coverImage}`)} 
                   alt={featuredBlog.title} 
                   className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-[0.16,1,0.3,1]"
                 />
@@ -129,7 +140,7 @@ export default function BlogsPage() {
                   <div className="relative w-full aspect-[16/10] overflow-hidden grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 border-b border-white/5">
                     <Image 
                       width={600} height={400} 
-                      src={`${imageBaseUrl}${blog.coverImage}`} 
+                      src={blog.coverImage?.startsWith('http') ? blog.coverImage : (blog.coverImage?.includes('photo-') ? `https://images.unsplash.com/${blog.coverImage}?q=80&w=1000&auto=format&fit=crop` : `${imageBaseUrl}${blog.coverImage}`)} 
                       alt={blog.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                     />

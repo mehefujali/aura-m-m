@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="lg:col-span-2 lg:col-start-6">
             <h4 className="text-white text-xs font-bold mb-6 tracking-widest uppercase opacity-80">Quick Links</h4>
             <ul className="space-y-4">
-              {["About Us", "Services", "Portfolio", "Blogs"].map((item) => (
+              {["About", "Services", "Portfolio", "Blogs"].map((item) => (
                 <li key={item}>
                   <Link href={`/${item.toLowerCase().replace(" ", "-")}`} className="text-sm font-medium text-slate-400 hover:text-[#e50914] transition-colors duration-300 flex items-center group">
                     <span className="w-0 h-[1px] bg-[#e50914] mr-0 transition-all duration-300 ease-out group-hover:w-3 group-hover:mr-2 shadow-[0_0_8px_rgba(229,9,20,0.5)]"></span>
@@ -105,12 +105,6 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 relative">
           <p className="text-slate-500 text-xs sm:text-sm font-medium tracking-widest uppercase">
             &copy; {new Date().getFullYear()} Aura Media. All Rights Reserved.
-          </p>
-          <p className="text-slate-500 text-xs sm:text-sm font-medium tracking-wide flex items-center gap-1.5 uppercase">
-            Engineered by
-            <a href="https://mehefujali.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#e50914] transition-colors relative group font-bold">
-               &nbsp;Mehefuj Ali
-            </a>
           </p>
         </div>
       </div>

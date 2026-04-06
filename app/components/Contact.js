@@ -80,83 +80,90 @@ const Contact = () => {
 
           <div className="grid lg:grid-cols-12 gap-16 items-start">
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="lg:col-span-7 space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div style={animateStyle(2)}>
-                  <label htmlFor="name" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Full Name</label>
+            <form onSubmit={handleSubmit} className="lg:col-span-7 space-y-12">
+              <div className="grid md:grid-cols-2 gap-12">
+                <div style={animateStyle(2)} className="relative">
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    placeholder="Enter your name"
-                    className="w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/10 text-white placeholder-slate-600 focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500"
+                    placeholder=" "
+                    className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-[#e50914] peer transition-colors font-light"
                   />
+                  <label htmlFor="name" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px]">
+                    Full Name / Identity
+                  </label>
                 </div>
-                <div style={animateStyle(3)}>
-                  <label htmlFor="email" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Email Address</label>
+                <div style={animateStyle(3)} className="relative">
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
-                    placeholder="Enter your email"
-                    className="w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/10 text-white placeholder-slate-600 focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500"
+                    placeholder=" "
+                    className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-[#e50914] peer transition-colors font-light"
                   />
+                  <label htmlFor="email" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px]">
+                    Professional Email
+                  </label>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                <div style={animateStyle(4)}>
-                  <label htmlFor="service" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Select Service</label>
+              <div className="grid md:grid-cols-2 gap-12">
+                <div style={animateStyle(4)} className="relative border-b border-white/10 pb-2">
+                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 text-left">Strategic Domain</p>
                   <select
                     id="service"
                     name="service"
                     required
-                    className="w-full px-6 py-4 rounded-2xl bg-[#050505] border border-white/10 text-white focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500 appearance-none"
+                    className="w-full bg-transparent py-2 text-slate-300 focus:outline-none transition-colors appearance-none font-light cursor-pointer"
                   >
-                    <option value="" disabled selected>Select a Service</option>
-                    <option value="Website Development">Website Development</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Social Media Management">Social Media Management</option>
-                    <option value="Design Studio">Design Studio</option>
-                    <option value="Combination">Combination</option>
+                    <option value="" disabled selected className="bg-[#020202]">Select Category</option>
+                    <option value="Website Development" className="bg-[#020202]">Digital Architecture</option>
+                    <option value="Digital Marketing" className="bg-[#020202]">Performance Marketing</option>
+                    <option value="Social Media Management" className="bg-[#020202]">Social Management</option>
+                    <option value="Design Studio" className="bg-[#020202]">Visual Studio</option>
                   </select>
+                  <i className="fas fa-chevron-down absolute right-0 bottom-4 text-slate-600 text-[10px] pointer-events-none"></i>
                 </div>
-                <div style={animateStyle(5)}>
-                  <label htmlFor="budget" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Project Budget</label>
+                <div style={animateStyle(5)} className="relative border-b border-white/10 pb-2">
+                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 text-left">Resource Allocation</p>
                   <select
                     id="budget"
                     name="budget"
                     required
-                    className="w-full px-6 py-4 rounded-2xl bg-[#050505] border border-white/10 text-white focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500 appearance-none"
+                    className="w-full bg-transparent py-2 text-slate-300 focus:outline-none transition-colors appearance-none font-light cursor-pointer"
                   >
-                    <option value="" disabled selected>Select Budget Range</option>
-                    <option value="$0-$500">$0 - $500</option>
-                    <option value="$500-$2k">$500 - $2k</option>
-                    <option value="$2k+">$2k +</option>
+                    <option value="" disabled selected className="bg-[#020202]">Investment Scale</option>
+                    <option value="s" className="bg-[#020202]">$0 - $500</option>
+                    <option value="m" className="bg-[#020202]">$500 - $2k</option>
+                    <option value="l" className="bg-[#020202]">$2k+ (Enterprise)</option>
                   </select>
+                  <i className="fas fa-chevron-down absolute right-0 bottom-4 text-slate-600 text-[10px] pointer-events-none"></i>
                 </div>
               </div>
 
-              <div style={animateStyle(6)}>
-                <label htmlFor="message" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-3 block">Message Details</label>
+              <div style={animateStyle(6)} className="relative">
                 <textarea
                   id="message"
                   name="message"
                   rows="4"
                   required
-                  placeholder="Tell us about your project"
-                  className="w-full px-6 py-4 rounded-2xl bg-white/[0.02] border border-white/10 text-white placeholder-slate-600 resize-none focus:border-[#e50914] focus:ring-1 focus:ring-[#e50914] focus:outline-none transition-all duration-500"
+                  placeholder=" "
+                  className="w-full bg-transparent border-b border-white/10 py-4 text-white focus:outline-none focus:border-[#e50914] peer transition-colors resize-none font-light"
                 ></textarea>
+                <label htmlFor="message" className="absolute left-0 top-4 text-slate-500 text-xs transition-all peer-placeholder-shown:top-4 peer-focus:-top-6 peer-focus:text-[10px] peer-focus:text-[#e50914] peer-focus:font-bold uppercase tracking-[0.2em] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px]">
+                  Mission Intelligence
+                </label>
               </div>
 
               <div style={animateStyle(7)}>
                 <button
                   type="submit"
-                  className="w-full px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-white bg-[#e50914] rounded-2xl transition-all duration-500 hover:bg-white hover:text-black hover:shadow-[0_0_30px_rgba(229,9,20,0.5)] flex items-center justify-center gap-3"
+                  className="w-full px-10 py-5 text-sm font-bold uppercase tracking-[0.3em] text-black bg-white rounded-full transition-all duration-500 hover:bg-[#e50914] hover:text-white hover:shadow-[0_0_30px_rgba(229,9,20,0.5)] flex items-center justify-center gap-3"
                 >
-                  Send Inquiry <i className="fas fa-paper-plane text-xs"></i>
+                  Initialize Connection <i className="fas fa-arrow-right-long ml-2"></i>
                 </button>
                 {formStatus && (
                   <p className="text-center mt-6 text-[#e50914] font-bold uppercase tracking-widest text-xs animate-pulse">

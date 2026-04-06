@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState, Suspense, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
+import Image from 'next/image';
 import * as THREE from 'three';
 
 const AnimatedSection = ({ children, className = "", delay = 0 }) => {
@@ -9,11 +10,12 @@ const AnimatedSection = ({ children, className = "", delay = 0 }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
+        const currentRef = ref.current;
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(entry.target); }
         }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-        if (ref.current) observer.observe(ref.current);
-        return () => { if (ref.current) observer.unobserve(ref.current); };
+        if (currentRef) observer.observe(currentRef);
+        return () => { if (currentRef) observer.unobserve(currentRef); };
     }, []);
 
     return (
@@ -128,17 +130,31 @@ export default function AboutPage() {
                     <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
                         <div className="lg:col-span-5 space-y-10">
                             <AnimatedSection>
-                                <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase mb-6">Origin & Evolution</h2>
-                                <div className="w-12 h-[2px] bg-[#e50914] mb-8"></div>
+                                <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase mb-6 leading-none">Origin & Evolution</h2>
+                                <div className="w-12 h-[2px] bg-[#e50914] mb-8 shadow-[0_0_10px_#e50914]"></div>
                                 <div className="space-y-6 text-slate-400 font-light leading-relaxed text-lg">
-                                    <p>Founded by Mehefuj Ali, Aura Media Marketing was born out of a necessity to eliminate the compromise between aesthetic brilliance and technical superiority.</p>
-                                    <p>Operating globally, we engineer sophisticated web applications, scalable SaaS architectures, and immersive digital platforms that redefine industry standards.</p>
+                                    <p>
+                                        Founded by <strong className="text-white">Mahdi Khan</strong> and <strong className="text-white">Saif</strong>, Aura Media Marketing was established with a singular mission: to eliminate the compromise between aesthetic brilliance and technical superiority in the digital landscape.
+                                    </p>
+                                    <p>
+                                        Our journey began with a shared vision of breaking traditional marketing boundaries. We don&apos;t just manage brands; we engineer digital ecosystems. By integrating advanced software engineering with elite psychological branding, we create immersive platforms that command global attention.
+                                    </p>
+                                    <p>
+                                        Today, we operate as a high-performance collective, delivering sophisticated web architectures, data-driven marketing protocols, and immersive digital signatures for enterprises ready to dominate their respective markets.
+                                    </p>
                                 </div>
                             </AnimatedSection>
                         </div>
                         <AnimatedSection className="lg:col-span-7 relative" delay={200}>
-                            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02] p-2 backdrop-blur-sm shadow-[0_0_40px_rgba(229,9,20,0.1)]">
-                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop" alt="Aura Media Core Infrastructure" className="w-full h-auto rounded-2xl object-cover grayscale contrast-125 brightness-90" />
+                            <div className="relative rounded-[2.5rem] overflow-hidden border border-white/5 bg-white/[0.01] p-2 backdrop-blur-3xl shadow-[0_40px_80px_rgba(229,9,20,0.05)] group">
+                                <div className="absolute inset-0 bg-[#e50914]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10 pointer-events-none"></div>
+                                <Image 
+                                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop" 
+                                    alt="Aura Media Core Infrastructure" 
+                                    width={1200}
+                                    height={800}
+                                    className="w-full h-auto rounded-[2rem] object-cover grayscale contrast-125 brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-[0.16,1,0.3,1]" 
+                                />
                             </div>
                         </AnimatedSection>
                     </div>
