@@ -17,11 +17,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   metadataBase: new URL("https://www.auramediamarketing.com"), // Change to your actual domain
   title: {
-    default: "Aura Media Marketing | Enterprise Digital Agency",
+    default: "Aura Media Marketing | Trusted by Growing Brands",
     template: "%s | Aura Media",
   },
   description:
-    "Aura Media Marketing is an elite digital architecture and marketing agency. We engineer highly scalable, secure enterprise web applications.",
+    "We work with brands that want more reach more trust and long term growth through effective online marketing.",
   keywords: [
     "enterprise software",
     "web development agency",

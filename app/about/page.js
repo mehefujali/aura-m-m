@@ -60,8 +60,8 @@ const AmbientDust = () => {
 
 export default function AboutPage() {
     const stats = [
-        { label: "Engineering Hours", value: "10k+" },
-        { label: "Client Satisfaction", value: "99%" },
+        // { label: "Engineering Hours", value: "10k+" },
+        { label: "Client Satisfaction", value: "96%" },
         { label: "Global Partners", value: "15+" },
         { label: "Uptime Guaranteed", value: "99.9%" }
     ];
@@ -113,7 +113,7 @@ export default function AboutPage() {
 
             <section className="py-12 border-y border-white/[0.03] bg-white/[0.01] relative z-20">
                 <div className="container mx-auto px-5 sm:px-8 max-w-7xl">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 divide-x divide-white/5">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 divide-x divide-white/5">
                         {stats.map((stat, idx) => (
                             <AnimatedSection key={idx} delay={idx * 100} className="text-center px-4 first:pl-0 last:pr-0">
                                 <p className="text-4xl md:text-5xl font-black text-white mb-2 tracking-tighter">{stat.value}</p>

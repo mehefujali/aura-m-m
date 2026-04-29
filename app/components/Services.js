@@ -94,15 +94,15 @@ export default function Services() {
             </div>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase text-balance">
-            Enterprise Solutions for <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e50914] to-white">Digital Dominance</span>
+            Services for  <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e50914] to-white">Modern Businesses</span>
           </h2>
           <p className="text-lg text-slate-400 font-light leading-relaxed text-balance">
-            We provide a comprehensive ecosystem of services designed to scale your brand through precision engineering and human-centric design.
+            Designed to help modern businesses attract attention build authority and grow faster.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {servicesData.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
           ))}

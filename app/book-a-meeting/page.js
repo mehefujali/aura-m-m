@@ -83,7 +83,7 @@ export default function BookMeetingPage() {
               {/* Calendly Widget */}
               <div className="w-full h-[calc(100%-3rem)] bg-[#0A0A0A]">
                 <InlineWidget 
-                  url="https://calendly.com/mehefujalim/30min" 
+                  url="https://calendly.com/saiffbhaiii/30min" 
                   styles={{ height: '100%', width: '100%' }}
                   pageSettings={{
                     backgroundColor: '0A0A0A',

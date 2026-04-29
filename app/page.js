@@ -28,9 +28,9 @@ export default function Home() {
         <AboutEngine />
         <Services />
         <Process />
-        <DigitalInsights />
-        <GoogleReviews />
-        <Testimonials />
+        {/* <DigitalInsights /> */}
+        {/* <GoogleReviews /> */}
+        {/* <Testimonials /> */}
         <BookMeeting />
         <Contact />
       </main>

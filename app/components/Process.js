@@ -6,7 +6,7 @@ const processSteps = [
     {
         title: "Startup Discovery",
         subtitle: "The Foundation",
-        description: "A deep diagnostic into your brand's potential, audience behavior, and competitive landscape to define core objectives.",
+        description: "A focused  strategy call or a quick discussion where we learn about your brand understand your audience review your current position and align on clear business goals.",
         icon: "fa-rocket",
     },
     {

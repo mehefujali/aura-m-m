@@ -82,7 +82,7 @@ const AboutEngine = () => {
                                 <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-white/5">
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#020202] to-transparent z-10 opacity-60"></div>
                                     <Image 
-                                        src="https://framerusercontent.com/images/99S6F5D0V6R0.png" 
+                                        src="/mahdi.png" 
                                         alt="Mahdi Khan"
                                         width={400}
                                         height={500}
@@ -98,7 +98,7 @@ const AboutEngine = () => {
                                 <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-white/5">
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#020202] to-transparent z-10 opacity-60"></div>
                                     <Image 
-                                        src="https://framerusercontent.com/images/99S6F5D0V6R0.png" 
+                                        src="/saif.jpg" 
                                         alt="Saif"
                                         width={400}
                                         height={500}
@@ -112,11 +112,11 @@ const AboutEngine = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 pt-12 border-t border-white/[0.05]">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 pt-12 border-t border-white/[0.05]">
                     {[
                         { value: "150+", label: "Global Clients" },
                         { value: "98%", label: "Success Rate" },
-                        { value: "12+", label: "Industry Awards" },
+                        // { value: "12+", label: "Industry Awards" },
                         { value: "5Y", label: "Market Dominance" },
                     ].map((stat, idx) => (
                         <AnimatedSection key={idx} delay={400 + (idx * 100)}>

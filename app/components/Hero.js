@@ -110,7 +110,7 @@ export default function Hero() {
                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#e50914]"></span>
                         </span>
                         <span className="text-[11px] sm:text-xs font-medium text-slate-300 tracking-[0.2em] uppercase">
-                            Global Enterprise Agency
+                            welcome to
                         </span>
                     </div>
                 </AnimatedSection>
@@ -128,7 +128,7 @@ export default function Hero() {
                 {/* Refined Copy */}
                 <AnimatedSection delay={300}>
                     <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed text-balance mb-12">
-                        We are an elite collective of digital architects and marketing strategists. We engineer uncompromising digital ecosystems for forward-thinking enterprises.
+                        We help businesses grow online with smart strategies stronger visibility and a professional digital presence that attracts the right audience.
                     </p>
                 </AnimatedSection>
 
@@ -140,19 +140,19 @@ export default function Hero() {
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 text-sm font-bold text-white bg-[#e50914] rounded-full transition-all duration-500 ease-[0.16,1,0.3,1] hover:bg-white hover:text-black hover:scale-[1.02] shadow-[0_0_20px_rgba(229,9,20,0.3)] hover:shadow-[0_0_30px_rgba(229,9,20,0.5)] uppercase tracking-widest"
                     >
-                        Initiate Project
+                        Book a call
                     </a>
 
                     <Link
-                        href="/portfolio"
+                        href="/services"
                         className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 text-sm font-bold text-slate-300 border border-white/10 rounded-full bg-white/[0.02] backdrop-blur-xl transition-all duration-500 ease-[0.16,1,0.3,1] hover:bg-white/10 hover:text-white hover:border-white/30 uppercase tracking-widest"
                     >
-                        Explore Architecture
+                        Services
                     </Link>
                 </AnimatedSection>
 
                 {/* Featured Service Cards (Matching Storyboard Page 1) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
+                {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
                     {[
                         { title: "Digital Marketing", icon: "fa-bullhorn", desc: "Data-driven growth strategies." },
                         { title: "Design Studio", icon: "fa-palette", desc: "Cinematic visual storytelling." },
@@ -168,7 +168,7 @@ export default function Hero() {
                             </div>
                         </AnimatedSection>
                     ))}
-                </div>
+                </div> */}
 
             </div>
 

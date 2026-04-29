@@ -119,11 +119,16 @@ const Contact = () => {
                     required
                     className="w-full bg-transparent py-2 text-slate-300 focus:outline-none transition-colors appearance-none font-light cursor-pointer"
                   >
+
+                    
+
+
+
                     <option value="" disabled selected className="bg-[#020202]">Select Category</option>
-                    <option value="Website Development" className="bg-[#020202]">Digital Architecture</option>
-                    <option value="Digital Marketing" className="bg-[#020202]">Performance Marketing</option>
-                    <option value="Social Media Management" className="bg-[#020202]">Social Management</option>
-                    <option value="Design Studio" className="bg-[#020202]">Visual Studio</option>
+                    <option value="Digital Marketing" className="bg-[#020202]">Digital Marketing</option>
+                    <option value="Design Studio" className="bg-[#020202]">Design Studio</option>
+                    <option value="Website Development" className="bg-[#020202]">Website Developmentt</option>
+                    <option value="Social Media Management" className="bg-[#020202]">Social Media Management</option>
                   </select>
                   <i className="fas fa-chevron-down absolute right-0 bottom-4 text-slate-600 text-[10px] pointer-events-none"></i>
                 </div>
@@ -163,7 +168,7 @@ const Contact = () => {
                   type="submit"
                   className="w-full px-10 py-5 text-sm font-bold uppercase tracking-[0.3em] text-black bg-white rounded-full transition-all duration-500 hover:bg-[#e50914] hover:text-white hover:shadow-[0_0_30px_rgba(229,9,20,0.5)] flex items-center justify-center gap-3"
                 >
-                  Initialize Connection <i className="fas fa-arrow-right-long ml-2"></i>
+                  Start Your Project <i className="fas fa-arrow-right-long ml-2"></i>
                 </button>
                 {formStatus && (
                   <p className="text-center mt-6 text-[#e50914] font-bold uppercase tracking-widest text-xs animate-pulse">
@@ -183,10 +188,10 @@ const Contact = () => {
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center transition-all duration-500 group-hover:bg-[#e50914]/10 group-hover:border-[#e50914]/20 group-hover:shadow-[0_0_15px_rgba(229,9,20,0.2)]">
                     <i className="fas fa-envelope text-lg text-slate-400 group-hover:text-[#e50914] transition-colors"></i>
                   </div>
-                  <div>
+                  <a href="mailto:saiffbhaiii@gmail.com">
                     <h4 className="text-white font-semibold tracking-tight">Email Correspondence</h4>
-                    <a href="mailto:saiffbhaiii@gmail.com" className="text-slate-400 hover:text-[#e50914] transition-colors text-sm font-light">saiffbhaiii@gmail.com</a>
-                  </div>
+                    <div  className="text-slate-400 hover:text-[#e50914] transition-colors text-sm font-light">saiffbhaiii@gmail.com</div>
+                  </a>
                 </div>
               </div>
 
@@ -196,25 +201,14 @@ const Contact = () => {
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center transition-all duration-500 group-hover:bg-[#e50914]/10 group-hover:border-[#e50914]/20 group-hover:shadow-[0_0_15px_rgba(229,9,20,0.2)]">
                     <i className="fab fa-whatsapp text-lg text-slate-400 group-hover:text-[#e50914] transition-colors"></i>
                   </div>
-                  <div>
+                  <a href="https://wa.me/8801815782432">
                     <h4 className="text-white font-semibold tracking-tight">Immediate Inquiry</h4>
-                    <a href="https://wa.me/8801815782432" className="text-slate-400 hover:text-[#e50914] transition-colors text-sm font-light">+880 181 578 2432</a>
-                  </div>
+                    <div  className="text-slate-400 hover:text-[#e50914] transition-colors text-sm font-light">+880 181 578 2432</div>
+                  </a>
                 </div>
               </div>
 
-              <div className="group" style={animateStyle(10)}>
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Headquarters</p>
-                <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center transition-all duration-500 group-hover:bg-[#e50914]/10 group-hover:border-[#e50914]/20 group-hover:shadow-[0_0_15_px_rgba(229,9,20,0.2)]">
-                    <i className="fas fa-map-marker-alt text-lg text-slate-400 group-hover:text-[#e50914] transition-colors"></i>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold tracking-tight">Global Operations</h4>
-                    <p className="text-slate-400 text-sm font-light">Available Worldwide</p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
