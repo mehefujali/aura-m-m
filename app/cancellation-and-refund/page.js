@@ -49,20 +49,19 @@ const LegalContent = ({ title, children }) => (
   </div>
 );
 
-export default function PrivacyPolicyPage() {
+export default function CancellationRefundPage() {
   return (
     <main className="bg-[#020202] text-white min-h-screen selection:bg-[#e50914]/30">
       {/* Header Section */}
       <section className="relative py-32 lg:py-44 text-center overflow-hidden border-b border-white/[0.05]">
-        {/* Cinematic Background Elements */}
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[#e50914]/10 rounded-full blur-[200px] pointer-events-none"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none"></div>
         
         <div className="container mx-auto px-5 relative z-10">
           <AnimatedSection>
-            <span className="text-[#e50914] text-xs font-black tracking-[0.3em] uppercase mb-6 block">Legal Documentation</span>
+            <span className="text-[#e50914] text-xs font-black tracking-[0.3em] uppercase mb-6 block">Service Protocols</span>
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white tracking-tighter leading-none mb-8">
-              Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Policy</span>
+              Cancellation & <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Refund</span>
             </h1>
             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-xs font-bold text-slate-400 tracking-widest uppercase">
               <span className="w-2 h-2 rounded-full bg-[#e50914] animate-pulse"></span>
@@ -74,68 +73,47 @@ export default function PrivacyPolicyPage() {
 
       {/* Content Section */}
       <section className="py-24 lg:py-32 px-6 relative overflow-hidden">
-        {/* Subtle Side Glows */}
         <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-[#e50914]/5 rounded-full blur-[150px] pointer-events-none"></div>
         <div className="absolute bottom-0 right-[-10%] w-[500px] h-[500px] bg-[#e50914]/5 rounded-full blur-[150px] pointer-events-none"></div>
 
         <div className="container mx-auto max-w-4xl relative z-10">
           <AnimatedSection>
             <div className="p-8 sm:p-12 rounded-[2.5rem] bg-white/[0.02] border border-white/[0.05] backdrop-blur-3xl shadow-2xl">
-                <LegalContent title="Introduction">
+                <LegalContent title="Project Cancellation">
                 <p>
-                    {`At Aura Media Marketing ("we", "us", "our"), protecting your privacy is of utmost importance to our core engineering principles. This Privacy Policy outlines how we architect data protection and safeguard your personal information when you interface with our digital ecosystem. By utilizing our advanced marketing and software solutions, you consent to the refined data protocols described herein.`}
+                    Aura Media Marketing operates on high-precision engineering timelines. Cancellations must be initiated through a formal project decommissioning request. If a project is cancelled after technical architecture has commenced but before full deployment, a decommissioning fee proportional to the allocated engineering resources will be applied.
                 </p>
                 </LegalContent>
 
-                <LegalContent title="Information Protocols">
-                <p>We process various telemetry and personal data types, optimized for performance and security:</p>
-                <ul className="space-y-4 mt-4">
-                    <li className="flex items-start gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#e50914] mt-2.5"></div>
-                        <span><strong>Identity Data:</strong> During consultation or onboarding, we collect encrypted records of your name, corporate email, and professional contact vectors.</span>
-                    </li>
-                    <li className="flex items-start gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#e50914] mt-2.5"></div>
-                        <span><strong>Analytical Metadata:</strong> We monitor system interactions, including IP geolocation, browser fingerprinting, and session flow to optimize our platform UX.</span>
-                    </li>
-                </ul>
-                </LegalContent>
-
-                <LegalContent title="Data Utilization">
-                <p>Your information is deployed through specific functional channels:</p>
-                <ul className="space-y-4 mt-4">
-                    <li className="flex items-start gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#e50914] mt-2.5"></div>
-                        <span>Architecting and maintaining customized service deployments.</span>
-                    </li>
-                    <li className="flex items-start gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#e50914] mt-2.5"></div>
-                        <span>Facilitating high-level technical communication and project updates.</span>
-                    </li>
-                    <li className="flex items-start gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#e50914] mt-2.5"></div>
-                        <span>Iterative improvement of our digital infrastructure and algorithm performance.</span>
-                    </li>
-                </ul>
-                </LegalContent>
-
-                <LegalContent title="Security Architecture">
+                <LegalContent title="Refund Eligibility">
                 <p>
-                    We implement military-grade technical and organizational security measures. Our architecture is designed to neutralize unauthorized access vectors and prevent data exfiltration. While we maintain rigorous defense-in-depth strategies, we acknowledge that no digital transmission is impervious to advanced persistent threats.
+                    Refunds are processed based on the specific service milestone achieved. Professional service fees for initiated architectural phases are generally non-refundable due to the high-level labor and intellectual property already deployed. Technical credit may be issued for future project iterations at the discretion of Aura Media leadership.
                 </p>
                 </LegalContent>
 
-                <LegalContent title="User Sovereignty">
+                <LegalContent title="Software Licenses">
                 <p>
-                    You retain full sovereignty over your data. You may request comprehensive data extracts, correction of metadata inaccuracies, or full decommissioning (deletion) of your personal records within our systems at any time.
+                    Fees for proprietary software licenses or third-party API integrations deployed during project execution are strictly non-refundable once the activation key has been generated or the integration has been finalized.
                 </p>
                 </LegalContent>
 
-                <LegalContent title="Contact Engineering">
+                <LegalContent title="Processing Timeline">
                 <p>
-                    For inquiries regarding our privacy protocols or to exercise your data rights, please interface with our support team via our{" "}
+                    Approved refund requests undergo a rigorous financial audit. Upon verification, the refund vector will be initialized within 10-15 business days. Funds will be returned via the original payment protocol used during project initiation.
+                </p>
+                </LegalContent>
+
+                <LegalContent title="Dispute Resolution">
+                <p>
+                    In the event of a service disagreement, we prioritize technical mediation. We encourage clients to interface directly with their Project Lead before escalating to a formal dispute to ensure a streamlined resolution.
+                </p>
+                </LegalContent>
+
+                <LegalContent title="Formal Requests">
+                <p>
+                    To initialize a cancellation or refund inquiry, please interface with our financial department via the{" "}
                     <Link href="/contact" className="text-[#e50914] font-bold hover:text-white transition-colors duration-300 underline underline-offset-8">
-                    Contact Node
+                    Support Node
                     </Link>
                     .
                 </p>

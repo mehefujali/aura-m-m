@@ -74,9 +74,10 @@ export default function AdminDashboardLayout({ children }) {
           <div className="mb-10">
             <Link href="/">
               <img
-                src="https://i.ibb.co/kshWGbCV/Artboard-5.png"
-                alt="NexorZen Agency Logo"
-                style={{ width: "150px", height: "auto" }}
+                src="/logo.png"
+                alt="Aura Media Marketing Logo"
+                className="brightness-0 invert"
+                style={{ width: "220px", height: "auto" }}
               />
             </Link>
           </div>

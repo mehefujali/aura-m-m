@@ -33,8 +33,14 @@ export default function Header() {
         <nav className="container mx-auto px-5 sm:px-8 flex items-center justify-between">
 
           <Link href="/" className="relative z-10 flex items-center group">
-            <div >
-              <Image src='/logo.png' fill alt="Aura media marketing" className=" contrast-0 invert" />
+            <div className="relative w-52 h-14 sm:w-64 sm:h-16 md:w-72 md:h-20 transition-all duration-300 group-hover:scale-105">
+              <Image 
+                src="/logo.png" 
+                fill 
+                alt="Aura Media Marketing" 
+                className="object-contain brightness-0 invert" 
+                priority
+              />
             </div>
           </Link>
 

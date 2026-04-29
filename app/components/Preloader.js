@@ -54,15 +54,15 @@ const Preloader = ({ onComplete }) => {
       <Image 
         id="preloader-logo" 
         src="/logo.png" // /public/logo.png file must exist
-        alt="DevsafeX Logo" 
-        width={80} 
-        height={80}
+        alt="Aura Media Marketing Logo" 
+        width={220} 
+        height={220}
         priority={true} // Helps with loading performance
-        className="opacity-0 transform scale-80"
+        className="opacity-0 transform scale-80 brightness-0 invert"
       />
       <div className="preloader-text-wrapper mt-4">
         <div className="preloader-text font-orbitron text-lg tracking-[0.2em] uppercase opacity-0 transform translate-y-full">
-          Booting DevsafeX OS...
+          Booting Aura Media...
         </div>
       </div>
       <div id="loading-percentage-display" className="font-orbitron absolute bottom-[10%] text-2xl opacity-0">
